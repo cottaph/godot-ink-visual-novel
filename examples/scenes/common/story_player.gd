@@ -53,7 +53,7 @@ var _profiler: InkGDProfiler = InkGDProfiler.new()
 # In your project you can also add it in the scene tree and use the inspector
 # to set the variables.
 var _ink_player = InkPlayerFactory.create()
-
+	
 
 # ############################################################################ #
 # Node

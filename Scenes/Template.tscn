@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://rucowvhxa4f8" path="res://Sprites/bg01-hallway.jpg" id="2"]
 [ext_resource type="Texture2D" uid="uid://bh7d12skf1l8g" path="res://Sprites/female_01_neutral.png" id="3"]
 [ext_resource type="Texture2D" uid="uid://cur7dx78phwkh" path="res://Sprites/male_01_neutral.png" id="4"]
-[ext_resource type="Script" path="res://Scripts/Ink_handler.gd" id="5"]
+[ext_resource type="Script" uid="uid://brxu6sxp3joej" path="res://Scripts/Ink_handler.gd" id="5"]
 
 [sub_resource type="FontFile" id="1"]
 fallbacks = Array[Font]([ExtResource("1")])

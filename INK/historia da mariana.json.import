@@ -1,0 +1,15 @@
+[remap]
+
+importer="inkgd.ink.json"
+type="Resource"
+uid="uid://c31ogibykdwb3"
+path="res://.godot/imported/historia da mariana.json-7e35ae3dfe287b6bc47bdcd22f6d0891.res"
+
+[deps]
+
+source_file="res://INK/historia da mariana.json"
+dest_files=["res://.godot/imported/historia da mariana.json-7e35ae3dfe287b6bc47bdcd22f6d0891.res"]
+
+[params]
+
+compress=true

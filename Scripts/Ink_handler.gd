@@ -4,15 +4,17 @@ extends Control
 
 var InkPlayer = load("res://addons/inkgd/ink_player.gd")
 @onready var choice_btn = load("res://Scenes/Dialog_Button.tscn")
-@onready var f_happy_icon = load("res://Sprites/female_01_smile.png")
-@onready var f_neutral_icon = load("res://Sprites/female_01_neutral.png")
+#@onready var f_happy_icon = load("res://Sprites/female_01_smile.png")
+#@onready var f_neutral_icon = load("res://Sprites/female_01_neutral.png")
 
 var _ink_player = InkPlayer.new()
 @onready var _btn = []
 
+@export var nextScene = ""
+
 func _ready():
 	add_child(_ink_player)
-	_ink_player.ink_file = load("res://INK/Tutorial_example.json")
+	_ink_player.ink_file = load("res://INK/historia da mariana.json")
 	
 	_ink_player.loads_in_background = true
 	_ink_player.connect("loaded", Callable(self, "_story_loaded"))
@@ -23,7 +25,7 @@ func _story_loaded(successfully: bool):
 		print("Not loaded")
 		return
 
-	_observe_variables()
+	#_observe_variables()
 	# _bind_externals()
 
 	_continue_story()
@@ -68,10 +70,11 @@ func _select_choice(index):
 	_continue_story()
 	
 func _close_btn():
-	$ColorRect.visible = false
-	$Male.visible = false
-	$Female.visible = false
+	#$ColorRect.visible = false
+	#$Male.visible = false
+	#$Female.visible = false
 	$ColorRect/Close.visible = false
+	get_tree().change_scene_to_file(nextScene)
 
 
 # Uncomment to bind an external function.
@@ -82,15 +85,15 @@ func _close_btn():
 # func _external_function(arg1, arg2):
 # 	pass
 
-func _observe_variables():
-	_ink_player.observe_variables(["f_happy", "f_nervous", "f_neutral"], self, "_variable_changed")
+#func _observe_variables():
+#	_ink_player.observe_variables(["f_happy", "f_nervous", "f_neutral"], self, "_variable_changed")
 
-func _variable_changed(variable_name, new_value):
-	if variable_name == "f_happy" and new_value == true:
-		$Female.texture = f_happy_icon
-	elif variable_name == "f_happy" and new_value == false:
-		$Female.texture = f_neutral_icon
-	print("Variable '%s' changed to: %s" %[variable_name, new_value])
+#func _variable_changed(variable_name, new_value):
+#	if variable_name == "f_happy" and new_value == true:
+#		$Female.texture = f_happy_icon
+#	elif variable_name == "f_happy" and new_value == false:
+#		$Female.texture = f_neutral_icon
+#	print("Variable '%s' changed to: %s" %[variable_name, new_value])
 
 func _on_save_pressed():
 	_ink_player.save_state_to_path("res://saves/save.save")
